@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,600,700&display=swap&subset=latin-ext,vietnamese');
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  background: url(./img/body_bg.gif);
+  font-family: 'Asap', sans-serif;
+}
+
+.navbar {
+  background: url(./img/header-bg.jpg);
 }
 
 .container {
@@ -14,10 +21,46 @@ body {
   width: 1000px;
 }
 
-.MovieCard {
-  padding: 0;
+.category-name {
+  color: #dacb46;
 }
 
+.movies-board {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.MovieCard {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  min-width: 540px;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.col-md-4 {
+  padding: 0;
+  margin: 0;
+}
 .card {
   margin: 1rem 0;
+  height: 371.15px;
+  width: 210px;
+  background: url(./img/item_bg.gif);
+}
+
+
+
+.card-body {
+  padding: 5px 0 0 10px;
+}
+
+.card-title {
+  font-weight: bold;
+  color: white;
 }

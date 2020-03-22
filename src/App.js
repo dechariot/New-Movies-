@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -6,9 +6,24 @@ import NavBar from './components/NavBar'
 import MovieCard from './components/MovieCard'
 import Footer from './components/Footer'
 
+let apiKey = "9b49a09820c155187af9b47bf7400b7d";
 
-export default function App() {
-  return (
+function App() {
+  let [movies,setMovies] = useState(null)
+  let CurrentPlaying = async () => {
+    console.log("Api Key",apiKey);
+    let url = ` https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`
+    let data = await fetch(url);
+    let dataResult = await data.json(); 
+    console.log("Data is ",dataResult);
+    setMovies(dataResult.results)
+  }
+  useEffect(CurrentPlaying,[]);
+  if (movies == null) {
+    return (
+      <div>Loading...</div>
+    );
+  } return (
     //Start Website
     <div className="App">
 
@@ -27,17 +42,19 @@ export default function App() {
         {/* Filter */}
 
         <Row>
-          <Col xs={12} md={9}>
+          <Col xs={12} md={8}>
 
             {/* Movie Category Name */}
-            <h1>Movies Category</h1>
+            <h1 className="category-name">Movies Category</h1>
 
+            
             {/* Movie Card */}
-            <MovieCard />
+            <MovieCard movieList = {movies && movies} />
+            
 
           </Col>
 
-          <Col xs={6} md={3}>
+          <Col xs={6} md={4}>
             SideBar
           </Col>
 
@@ -52,3 +69,4 @@ export default function App() {
   );
 }
 
+export default App;
