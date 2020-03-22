@@ -1,26 +1,51 @@
 import React from 'react'
-import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Card, Button } from 'react-bootstrap'
+import './App.css'
+import { Container, Row, Col } from 'react-bootstrap'
+import NavBar from './components/NavBar'
+import MovieCard from './components/MovieCard'
+import Footer from './components/Footer'
+
 
 export default function App() {
   return (
     //Start Website
     <div className="App">
 
-      {/* Movie Card */}
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.</Card.Text>
-          <Button variant="secondary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      {/* Movie Card */}
+      {/* Navigation Bar */}
+      <NavBar />
+      {/* Navigation Bar */}
 
+      {/* Start Main-Content */}
+      <Container className="main-content">
+        {/* Stack the columns on mobile by making one full-width and the other half-width */}
+
+        {/* Filter */}
+        <Container>
+          Hello This is Filter
+        </Container>
+        {/* Filter */}
+
+        <Row>
+          <Col xs={12} md={9}>
+
+            {/* Movie Category Name */}
+            <h1>Movies Category</h1>
+
+            {/* Movie Card */}
+            <MovieCard />
+
+          </Col>
+
+          <Col xs={6} md={3}>
+            SideBar
+          </Col>
+
+        </Row>
+      </Container>
+      {/* End Main-Content */}
+
+      <Footer/>      
 
     </div>
     // End Website

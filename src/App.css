@@ -6,3 +6,18 @@ body {
   -webkit-box-sizing: border-box;
 }
 
+.container {
+  padding: 0;
+}
+
+.main-content {
+  width: 1000px;
+}
+
+.MovieCard {
+  padding: 0;
+}
+
+.card {
+  margin: 1rem 0;
+}
