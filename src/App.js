@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Spinner } from 'react-bootstrap'
 import NavBar from './components/NavBar'
+import SideBar from './components/SideBar'
 import MovieCard from './components/MovieCard'
 import Footer from './components/Footer'
 
@@ -21,14 +22,18 @@ function App() {
   useEffect(CurrentPlaying,[]);
   if (movies == null) {
     return (
-      <div>Loading...</div>
+      <Spinner animation="border" role="status">
+  <span className="sr-only">Loading...</span>
+</Spinner>
     );
   } return (
     //Start Website
     <div className="App">
 
       {/* Navigation Bar */}
+      <div className="container-fluid top-nav">
       <NavBar />
+      </div>
       {/* Navigation Bar */}
 
       {/* Start Main-Content */}
@@ -55,15 +60,16 @@ function App() {
           </Col>
 
           <Col xs={6} md={4}>
-            SideBar
+            <SideBar/>
           </Col>
 
         </Row>
       </Container>
       {/* End Main-Content */}
-
+    
+    <div className="container-fluid footer">
       <Footer/>      
-
+      </div>
     </div>
     // End Website
   );

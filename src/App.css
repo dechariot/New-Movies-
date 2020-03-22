@@ -7,18 +7,17 @@ body {
   -webkit-box-sizing: border-box;
   background: url(./img/body_bg.gif);
   font-family: 'Asap', sans-serif;
+  min-width: 570px;
 }
 
-.navbar {
+.top-nav {
   background: url(./img/header-bg.jpg);
 }
 
+
 .container {
   padding: 0;
-}
-
-.main-content {
-  width: 1000px;
+  max-width: 1000px;
 }
 
 .category-name {
@@ -26,27 +25,23 @@ body {
 }
 
 .movies-board {
+
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
 .MovieCard {
   padding: 0;
   display: flex;
-  justify-content: center;
 }
 
 .row {
-  min-width: 540px;
-  justify-content: space-around;
+
   box-sizing: border-box;
+  justify-content: flex-start;
 }
 
-.col-md-4 {
-  padding: 0;
-  margin: 0;
-}
+
 .card {
   margin: 1rem 0;
   height: 371.15px;
@@ -63,4 +58,12 @@ body {
 .card-title {
   font-weight: bold;
   color: white;
+}
+
+
+.footer {
+  background: url(./img/header-bg.jpg);
+  color: white;
+  width: 100%;
+  background-size: contain;
 }
